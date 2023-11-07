@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+function run_test {
+  local cat_csv="$1"
+  local input_file_count=$2
+
+  find data -type f -name '*.csv' |
+    sort |
+    head -n $input_file_count |
+    $cat_csv ||
+    if [[ $? -eq 141 ]]; then true; else exit $?; fi
+}
+
+function usage {
+  echo "Usage: $0 [CAT_CSV_NAME] [INPUT_FILE_COUNT]" >&2
+  exit 1
+}
+
+if [[ $# -ne 2 ]]
+then
+  usage
+fi
+
+cat_csv=${1:-}
+input_file_count=${2:-}
+
+run_test $cat_csv $input_file_count

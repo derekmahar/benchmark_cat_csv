@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+read first
+xsv cat rows $first
+xargs --no-run-if-empty sh -c 'xsv cat rows "$@" | tail --lines=+2 --quiet'

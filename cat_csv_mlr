@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+read first
+mlr --csv cat $first
+xargs --no-run-if-empty mlr --csv --headerless-csv-output cat
