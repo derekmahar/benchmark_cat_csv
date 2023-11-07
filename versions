@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+csvtk version
+mlr --version
+qsv --version
+echo xsv $(xsv --version)
+
+echo GNU tools
+bash --version
+cat --version
+tail --version
+xargs --version
