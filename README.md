@@ -2,9 +2,32 @@
 
 Benchmark the concatenation of a large quantity of CSV files using a naive custom shell script, [csvtk](https://bioinf.shenwei.me/csvtk/), [mlr](https://miller.readthedocs.io/), [qsv](https://github.com/jqnatividad/qsv), and [xsv](https://github.com/BurntSushi/xsv).
 
+## Generate Test Input CSV Files
+
+Script `generate_test_data [DATA_PATH] [TOTAL_FILE_COUNT]` generates `TOTAL_FILE_COUNT` CSV files that each contain a single row and column in directory `DATA_PATH`.  For example:
+
+```
+$ generate_test_data data 100000
+$ find data -name '*.csv' | sort | head -n 5; echo "..."; find data -name '*.csv' | sort | tail -n 5
+data/0000001.csv
+data/0000002.csv
+data/0000003.csv
+data/0000004.csv
+data/0000005.csv
+...
+data/0099996.csv
+data/0099997.csv
+data/0099998.csv
+data/0099999.csv
+data/0100000.csv
+$ cat data/0000001.csv
+Column
+1
+```
+
 ## Dependencies
 
-* All of the scripts requires [GNU Bash](https://www.gnu.org/software/bash/).
+* All of the scripts require [GNU Bash](https://www.gnu.org/software/bash/).
 * `cat_csv_csvtk` requires [csvtk](https://bioinf.shenwei.me/csvtk/).
 * `cat_csv_custom` requires GNU Bash [read](https://www.gnu.org/software/bash/manual/bash.html#index-read), GNU [cat](https://www.gnu.org/software/coreutils/manual/coreutils.html#cat-invocation), GNU [tail](https://www.gnu.org/software/coreutils/manual/coreutils.html#tail-invocation), and GNU [xargs](https://www.gnu.org/software/findutils/manual/html_mono/find.html#Invoking-xargs).
 * `cat_csv_mlr` requires [mlr](https://miller.readthedocs.io/).
