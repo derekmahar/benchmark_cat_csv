@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 read first
 qsv cat rows $first
-xargs --no-run-if-empty sh -c 'qsv cat rows "$@" | qsv behead'
+xargs --no-run-if-empty sh -c 'qsv cat rows "$@" | qsv behead' cat_csv_skip_header
