@@ -4,11 +4,11 @@ Benchmark the concatenation of a large quantity of CSV files using a naive custo
 
 ## Generate Test Input CSV Files
 
-Script `generate_test_data` creates a given number of CSV files, each containing a single row and column, in a given directory.  Argument `DATA_PATH` specifies the directory where the script will store the data files and argument `TOTAL_FILE_COUNT` specifies how many files the script will create.  For example:
+Script `generate_test_data` creates a given number of CSV files, each containing a single row and column, in a given directory.  Argument `DATA_PATH` specifies the directory where the script will store the data files and argument `FILE_COUNT` specifies how many files the script will create.  For example:
 
 ```
 $ ./generate_test_data
-Usage: ./generate_test_data [DATA_PATH] [TOTAL_FILE_COUNT]
+Usage: ./generate_test_data [DATA_PATH] [FILE_COUNT]
 $ generate_test_data data 100000
 $ find data -name '*.csv' | sort | head -n 5; echo "..."; find data -name '*.csv' | sort | tail -n 5
 data/0000001.csv

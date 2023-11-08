@@ -3,15 +3,15 @@ set -euo pipefail
 
 function create_csv {
   local data_path=$1
-  local count=$2
+  local file_number=$2
 
   mkdir -p $data_path
-  csv_file_name="$data_path/$(printf "%07d" $count).csv"
-  printf "Column\n%d\n" $count > "$csv_file_name"
+  csv_file_name="$data_path/$(printf "%07d" $file_number).csv"
+  printf "Column\n%d\n" $file_number > "$csv_file_name"
 }
 
 function usage {
-  echo "Usage: $0 [DATA_PATH] [TOTAL_FILE_COUNT]" >&2
+  echo "Usage: $0 [DATA_PATH] [FILE_COUNT]" >&2
   exit 1
 }
 
@@ -21,9 +21,9 @@ then
 fi
 
 data_path="${1:-}"
-total_file_count=${2:-}
+file_count=${2:-}
 
-for count in $(seq 1 $total_file_count)
+for file_number in $(seq 1 $file_count)
 do
-  create_csv "$data_path" $count
+  create_csv "$data_path" $file_number
 done
