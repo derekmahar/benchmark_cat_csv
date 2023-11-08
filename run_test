@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+function pipefail {
+  if [[ $? -eq 141 ]]
+  then
+    true
+  else
+    exit $?
+  fi
+}
+
 function run_test {
   local cat_csv="$1"
   local input_file_count=$2
@@ -9,7 +18,7 @@ function run_test {
     sort |
     head -n $input_file_count |
     $cat_csv ||
-    if [[ $? -eq 141 ]]; then true; else exit $?; fi
+    pipefail
 }
 
 function usage {
