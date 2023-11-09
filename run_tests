@@ -16,9 +16,11 @@ input_file_count=${1:-}
 hyperfine \
   --warmup 3 \
   "./run_test ./cat_csv_csvtk $input_file_count" \
+  "./run_test ./cat_csv_csvtk_subshell $input_file_count" \
   "./run_test ./cat_csv_custom $input_file_count" \
   "./run_test ./cat_csv_custom_subshell $input_file_count" \
   "./run_test ./cat_csv_mlr $input_file_count" \
+  "./run_test ./cat_csv_mlr_subshell $input_file_count" \
   "./run_test ./cat_csv_qsv $input_file_count" \
   "./run_test ./cat_csv_qsv_flexible $input_file_count" \
   "./run_test ./cat_csv_qsvlite $input_file_count" \

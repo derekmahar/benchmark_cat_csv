@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+read first
+csvtk concat $first
+xargs --no-run-if-empty sh -c 'csvtk concat "$@" | csvtk del-header' cat_csv_skip_header
