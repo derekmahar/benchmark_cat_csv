@@ -1,6 +1,6 @@
 # benchmark_cat_csv
 
-Benchmark the concatenation of a large quantity of CSV files using a naive custom shell script, [csvtk](https://bioinf.shenwei.me/csvtk/), [goawk](https://github.com/benhoyt/goawk), [mlr](https://miller.readthedocs.io/), [qsv](https://github.com/jqnatividad/qsv), and [xsv](https://github.com/BurntSushi/xsv).
+Benchmark the concatenation of a large quantity of CSV files using a naive custom shell script, [awk](https://github.com/onetrueawk/awk/), [csvtk](https://bioinf.shenwei.me/csvtk/), [goawk](https://github.com/benhoyt/goawk), [mlr](https://miller.readthedocs.io/), [qsv](https://github.com/jqnatividad/qsv), and [xsv](https://github.com/BurntSushi/xsv).
 
 ## Generate Test Input CSV Files
 
@@ -30,6 +30,7 @@ Column
 ## Dependencies
 
 * All of the scripts require [GNU Bash](https://www.gnu.org/software/bash/).
+* `cat_csv_awk` requires [awk](https://github.com/onetrueawk/awk/).
 * `cat_csv_csvtk` requires [csvtk](https://bioinf.shenwei.me/csvtk/).
 * `cat_csv_custom` requires GNU Bash [read](https://www.gnu.org/software/bash/manual/bash.html#index-read), GNU [cat](https://www.gnu.org/software/coreutils/manual/coreutils.html#cat-invocation), GNU [tail](https://www.gnu.org/software/coreutils/manual/coreutils.html#tail-invocation), and GNU [xargs](https://www.gnu.org/software/findutils/manual/html_mono/find.html#Invoking-xargs).
 * `cat_csv_goawk` requires [goawk](https://github.com/benhoyt/goawk).

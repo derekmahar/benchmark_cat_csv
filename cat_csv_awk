@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+read first
+goawk --csv '{print}' $first
+xargs --no-run-if-empty goawk --csv 'FNR>1{print}'
