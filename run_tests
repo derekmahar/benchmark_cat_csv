@@ -19,6 +19,7 @@ hyperfine \
   "./run_test ./cat_csv_csvtk_subshell $input_file_count" \
   "./run_test ./cat_csv_custom $input_file_count" \
   "./run_test ./cat_csv_custom_subshell $input_file_count" \
+  "./run_test ./cat_csv_goawk $input_file_count" \
   "./run_test ./cat_csv_mlr $input_file_count" \
   "./run_test ./cat_csv_mlr_subshell $input_file_count" \
   "./run_test ./cat_csv_qsv $input_file_count" \
