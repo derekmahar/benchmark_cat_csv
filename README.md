@@ -35,6 +35,5 @@ Column
 * `cat_csv_goawk` requires [goawk](https://github.com/benhoyt/goawk).
 * `cat_csv_mlr` requires [mlr](https://miller.readthedocs.io/).
 * `cat_csv_qsv` requires [qsv](https://github.com/jqnatividad/qsv).
-* `cat_csv_qsvlite` requires [qsvlite](https://github.com/jqnatividad/qsv) (`cargo install qsv --locked --bin qsvlite -F lite`).
 * `cat_csv_xsv` requires [xsv](https://github.com/BurntSushi/xsv).
 * `run_tests` requires [Hyperfine](https://github.com/sharkdp/hyperfine). 
