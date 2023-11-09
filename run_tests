@@ -21,4 +21,6 @@ hyperfine \
   "./run_test ./cat_csv_mlr $input_file_count" \
   "./run_test ./cat_csv_qsv $input_file_count" \
   "./run_test ./cat_csv_qsv_flexible $input_file_count" \
+  "./run_test ./cat_csv_qsvlite $input_file_count" \
+  "./run_test ./cat_csv_qsvlite_flexible $input_file_count" \
   "./run_test ./cat_csv_xsv $input_file_count"

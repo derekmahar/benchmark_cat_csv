@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+read first
+qsvlite cat rows --flexible $first
+xargs --no-run-if-empty sh -c 'qsvlite cat rows --flexible "$@" | qsvlite behead' cat_csv_skip_header
