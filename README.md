@@ -16,7 +16,7 @@ Benchmarks the concatenation of a large quantity of CSV files using a naive cust
 
 ## Generate Test Input CSV Files
 
-Script `generate_test_data` creates a given number of CSV files, each containing a single row and column, in a given directory.  Argument `DATA_PATH` specifies the directory where the script will store the data files and argument `FILE_COUNT` specifies how many files the script will create.  For example:
+Script `generate_test_data` creates the number of CSV files specified by argument FILE_COUNT, each containing a single row and column filled with the file number, in the directory specified by argument DATA_PATH.  For example:
 
 ```
 $ ./generate_test_data
